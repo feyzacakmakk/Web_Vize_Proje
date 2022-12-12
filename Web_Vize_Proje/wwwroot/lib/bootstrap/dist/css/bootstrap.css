@@ -1544,7 +1544,7 @@ pre code {
 
 .table-bordered th,
 .table-bordered td {
-  border: 1px solid #dee2e6;
+  border: 4px solid #dee2e6;
 }
 
 .table-bordered thead th,
@@ -1556,7 +1556,7 @@ pre code {
 .table-borderless td,
 .table-borderless thead th,
 .table-borderless tbody + tbody {
-  border: 0;
+  border: 1;
 }
 
 .table-striped tbody tr:nth-of-type(odd) {
@@ -10019,7 +10019,7 @@ a.text-dark:hover, a.text-dark:focus {
   }
   .table-bordered th,
   .table-bordered td {
-    border: 1px solid #dee2e6 !important;
+    border: 4px solid #dee2e6;
   }
   .table-dark {
     color: inherit;

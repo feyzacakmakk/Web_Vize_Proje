@@ -6,7 +6,7 @@ namespace Web_Vize_Proje.Models
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=DESKTOP-A7KUBO2;database=UniWebSiteDb; integrated security=true;");
+            optionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;database=UniWebSiteDb; integrated security=true;");
 
         }
         public DbSet<Yonetici> Yoneticiler { get; set; }

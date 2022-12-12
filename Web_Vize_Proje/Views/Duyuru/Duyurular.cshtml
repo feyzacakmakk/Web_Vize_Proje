@@ -21,15 +21,15 @@
 					<h1 class="text-white text-monospace">
 						DÜDuyurular
 					</h1>
-					<div class="link-nav pb-40 pt-40" style="margin-right: 3rem;">
+					@*<div class="link-nav pb-40 pt-40" style="margin-right: 5rem;">
 						<span class="box">
-							<a href="index.html">Ana Sayfa</a>
+							<a href="/Home/Index">Ana Sayfa</a>
 							<i class="lnr lnr-arrow-right"></i>
 							<a href="/Duyuru/Duyurular">DÜDuyurular</a>
 						</span>
-					</div>
-					<a href="/Yonetici/Duyurular/">
-						<button class="click-btn btn mx-5" style="color: blueviolet;">Duyuruları Düzenle</button>
+					</div>*@
+					<a href="/Yonetici/GirisYap/">
+						<button class="click-btn btn" style="color: blueviolet; margin-top: 3rem;  margin-right: 3rem;">Duyuruları Düzenle</button>
 					</a>
 
 				</div>
@@ -112,7 +112,7 @@
 						
 							<div class="user-details row">
 								 
-								<p class="date col-lg-12 col-md-12 col-6"><a href="#">@(((DateTime)item.DuyuruTarihi).ToString("dd-MMM-yyyy"))</a> <span class="lnr lnr-calendar-full"></span></p>
+								<p class="date col-lg-12 col-md-12 col-6"><span>@(((DateTime)item.DuyuruTarihi).ToString("dd-MMM-yyyy"))</span> <span class="lnr lnr-calendar-full"></span></p>
 							</div>
 						</div>
 						<div class="col-lg-9 col-md-9">
@@ -120,7 +120,7 @@
 								<h3>@item.DuyuruBasligi</h3>
 							</a>
 							<p class="excert">
-									@item.DuyuruAciklamasi.Substring(0,item.DuyuruAciklamasi.Substring(0,20).LastIndexOf(" "))...
+									@item.DuyuruAciklamasi.Substring(0,item.DuyuruAciklamasi.Substring(0,200).LastIndexOf(" "))...
 									
 								
 								
@@ -129,30 +129,7 @@
 						</div>
 					</div>
 						}
-					@*<nav class="blog-pagination justify-content-center d-flex">
-						
-						<ul class="pagination">
-							<li class="page-item">
-								<a href="#" class="page-link" aria-label="Previous">
-									<span aria-hidden="true">
-										<span class="lnr lnr-chevron-left"></span>
-									</span>
-								</a>
-							</li>
-							<li class="page-item"><a href="#" class="page-link">01</a></li>
-							<li class="page-item active"><a href="#" class="page-link">02</a></li>
-							<li class="page-item"><a href="#" class="page-link">03</a></li>
-							<li class="page-item"><a href="#" class="page-link">04</a></li>
-							<li class="page-item"><a href="#" class="page-link">09</a></li>
-							<li class="page-item">
-								<a href="#" class="page-link" aria-label="Next">
-									<span aria-hidden="true">
-										<span class="lnr lnr-chevron-right"></span>
-									</span>
-								</a>
-							</li>
-						</ul>
-					</nav>*@
+					
 				</div>
 				
 					

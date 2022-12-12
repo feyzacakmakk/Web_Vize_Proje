@@ -7,44 +7,30 @@
 	<div class="container">
 		<div class="row justify-content-center align-items-center">
 			<div class="col-lg-12 banner-right">
-				<h1 class="text-white">
-					Duyuru
-				</h1>
-				<p class="mx-auto text-white  mt-20 mb-40">
-					In the history of modern astronomy, there is probably no one greater leap forward than the building.
-				</p>
-				<div class="link-nav">
-					<span class="box">
-						<a href="index.html">Home </a>
-						<i class="lnr lnr-arrow-right"></i>
-						<a href="duyurular.html">Blog Home</a>
-						<i class="lnr lnr-arrow-right"></i>
-						<a href="genisDuyuru.html">Single Blog</a>
-					</span>
-				</div>
+				
 			</div>
 		</div>
 	</div>
 </section>
 
-<h1>Yeni Duyuru Girişi</h1>
-<br />
-@using (Html.BeginForm("DuyuruEkle","Yonetici",FormMethod.Post))
-{
-
-    @Html.Label("Duyuru Başlığı")
-    @Html.TextBoxFor(x=>x.DuyuruBasligi,new{@class ="form-control"})
-    @Html.ValidationMessageFor(x=>x.DuyuruBasligi)
-             <br />
-
-    @Html.Label("Duyuru İçeriği")
-    @Html.TextAreaFor(x=>x.DuyuruAciklamasi,10,3 ,new{@class ="form-control"})
-    @Html.ValidationMessageFor(x=>x.DuyuruAciklamasi)
-    <br />
 
 
-    <button class="btn btn-info" style= "font-size:medium;"> Duyuruyu Yayınla</button>
+<div class="container">
 
+	<h2 style="margin-left: 1rem; color: blueviolet;">Yeni Duyuru Girişi</h2>
+	<br />
+	<form class="form-group" asp-action="DuyuruEkle" asp-controller="Yonetici" method="post">
+		
+			<div class="form-group col-lg-12">
+				<label>Duyuru Başlığı</label> <br />
+				<input type="text" asp-for="DuyuruBasligi" class="form-control" />
+			</div>
 
-
-}
+			<div class="form-group col-lg-12">
+				<label>Duyuru Açıklaması</label>
+				<textarea type="text" asp-for="DuyuruAciklamasi" class="form-control" rows="10"></textarea>
+			</div>
+		<button class="btn" style="margin-left: 2rem; background-color: blueviolet; color:white; ">Duyuruyu Yayınla</button>
+		
+	</form>
+</div>
