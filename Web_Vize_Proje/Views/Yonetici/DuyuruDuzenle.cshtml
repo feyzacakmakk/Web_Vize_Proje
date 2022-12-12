@@ -19,35 +19,55 @@
         <div class="container">
             <div class="row justify-content-center align-items-center">
                 <div class="col-lg-12 banner-right">
-                    <h1 class="text-white text-uppercase ">
+                    <h1 class="text-white text-uppercase" style="margin-right: 2rem;">
                         Duyuru Düzenleme <br /> Sayfası
                     </h1>
-                    <a href="/Duyuru/Duyurular/">
-                        <button class="click-btn btn mx-5 my-5" style="color: blueviolet;">Duyurular</button>
-                    </a>
 
                 </div>
             </div>
         </div>
     </section>
 
-    @using (Html.BeginForm("DuyuruDuzenle", "Yonetici", FormMethod.Post))
-    {
-        <table class="table table-bordered table-striped">
-            @Html.HiddenFor(x => x.DuyuruID)
-            @Html.HiddenFor(x => x.DuyuruTarihi)
-            <br />
-            @Html.Label("Duyuru Başlığı")
-            @Html.TextBoxFor(x=> x.DuyuruBasligi, new {@class="form-control"})
+    @*<div class="container">
 
-            <br />
-            @Html.Label("Duyuru İçeriği")
-            @Html.TextAreaFor(x=>x.DuyuruAciklamasi,10,3, new{@class="form-control"})
-            <br />
-        </table>
-        <button class="btn btn-success"> Güncelle </button>
+        <h2 style="margin-left: 1rem; color: blueviolet;"></h2>
+        <br />
+        <form class="form-group" action="/Yonetici/DuyuruDuzenle/" method="post">
 
-    }
+            <div class="form-group col-lg-12">
+                <label>Duyuru Başlığı</label> <br />
+                <input type="text" asp-for="DuyuruBasligi" class="form-control" />
+            </div>
+
+            <div class="form-group col-lg-12">
+                <label>Duyuru Açıklaması</label>
+                <textarea type="text" asp-for="DuyuruAciklamasi" class="form-control" rows="10"></textarea>
+            </div>
+            <button class="btn" style="margin-left: 2rem; background-color: blueviolet; color:white; ">Duyuruyu Güncelle</button>
+
+        </form>
+    </div>*@
+    <div class="container">
+        @using (Html.BeginForm("DuyuruDuzenle", "Yonetici", FormMethod.Post))
+        {
+            <table class="table table-bordered table-striped">
+                @Html.HiddenFor(x => x.DuyuruID)
+                @Html.HiddenFor(x => x.DuyuruTarihi)
+                <br />
+                @Html.Label("Duyuru Başlığı")
+                @Html.TextBoxFor(x=> x.DuyuruBasligi, new {@class="form-control"})
+
+                <br />
+                @Html.Label("Duyuru İçeriği")
+                @Html.TextAreaFor(x=>x.DuyuruAciklamasi,10,3, new{@class="form-control"})
+                <br />
+            </table>
+            <button class="btn btn-success" style="margin-left: 2rem; background-color: blueviolet; color:white; "> Güncelle </button>
+
+        }
+
+    </div>
+   
     
 </body>
 </html>
