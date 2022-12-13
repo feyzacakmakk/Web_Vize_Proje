@@ -6,12 +6,14 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Web_Vize_Proje.Models;
+using Web_Vize_Proje.ViewComponents;
 
 namespace Web_Vize_Proje.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        UniWebSiteContext webSiteContext = new UniWebSiteContext();
 
         public HomeController(ILogger<HomeController> logger)
         {
@@ -20,12 +22,8 @@ namespace Web_Vize_Proje.Controllers
 
         public IActionResult Index()
         {
-            return View();
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
+            var result =webSiteContext.Duyurular.Take(3);
+            return View(result);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

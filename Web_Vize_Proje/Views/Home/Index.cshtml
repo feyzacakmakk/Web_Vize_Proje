@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<Duyuru>
 @{
     ViewData["Title"] = "Düzce Üniversitesi";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -26,7 +26,7 @@
           <p class="mx-auto text-white  mt-20 mb-40">
             Toplum için bilim anlayışını ilke edinen Düzce Üniversitesi, modern eğitim programları, 
             teknolojik imkânları, nitelikli ve donanımlı akademik kadrosuyla 
-            yeni değerler üretmeye azimle devam etmektedir.
+            yeni değerler üretmeye devam etmektedir.
           </p>
         </div>
         <div class="offset-lg-2 col-lg-5 col-md-12 home-banner-right">
@@ -90,34 +90,62 @@
       <div class="feature-inner row">
         <div class="col-lg-12">
           <div class="section-title text-left">
-            <h1>
+                        <h1 style="text-align: center">
                 Düzce Üniversitesi <br/>
                 Duyurular
-            </h1>
+                         </h1>
           </div>
         </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="single-blog-post">
-            <img src="/WebVize/img/blog-post/b1.jpg" class="img-fluid" alt="" />
-            <div class="overlay"></div>
-            <div class="top-text">
-              <p>29th, oct, 2018</p>
-            </div>
-            <div class="text">
-              <h4 class="text-white">DUYURU BAŞLIĞI</h4>
-              <div>
-                <p>
-                  DUYURU AÇIKLAMASI
-                </p>
-              </div>
-              <a href="#" class="primary-btn">
-                Devamını Gör
-                <i class="fa fa-long-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 mt--160">
+        @foreach (var item in Model)
+       {
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-blog-post">
+                            <img src="/WebVize/img/blog-post/b1.jpg" class="img-fluid" alt="" />
+                            <div class="overlay"></div>
+                            <div class="top-text">
+                                <p></p>
+                            </div>
+                           
+                                <div class="text">
+                                    @try
+                                {
+                                    <h4 class="text-white"> @item.DuyuruBasligi.Substring(0,item.DuyuruBasligi.Substring(0,48).LastIndexOf(" "))...</h4>
+
+                                }
+                                catch 
+                                {
+                                    <h4 class="text-white"> @item.DuyuruBasligi</h4>
+
+
+                                }
+
+                                    <div>   
+@*                                        @try
+                                    {
+                                        <p>
+                                            @item.DuyuruAciklamasi.Substring(0,item.DuyuruAciklamasi.Substring(0,10).LastIndexOf(" "))...
+
+                                        </p>
+                                    }
+                                    catch 
+                                    {
+                                        
+                                       
+                                    }
+*@                       
+                                    </div>
+                                    <a href="/Duyuru/DuyuruDetayi/@item.DuyuruID/" class="primary-btn">
+                                        Devamını Gör
+                                        <i class="fa fa-long-arrow-right"></i>
+                                    </a>
+                                </div>
+
+                            
+                        </div>
+                    </div>
+                }
+       
+@*        <div class="col-lg-4 col-md-6 mt--160">
           <div class="single-blog-post">
                         <img src="/WebVize/img/blog-post/b2.jpg" class="img-fluid" alt="" />
             <div class="overlay"></div>
@@ -158,7 +186,7 @@
               </a>
             </div>
           </div>
-        </div>
+        </div>*@
       </div>
     </div>
   </section>

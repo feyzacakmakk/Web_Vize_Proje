@@ -11,11 +11,7 @@ namespace Web_Vize_Proje.Controllers
         UniWebSiteContext context = new UniWebSiteContext();    
         EFDuyuruRepository duyuruRepository = new EFDuyuruRepository(new UniWebSiteContext());
 
-        public IActionResult Index()
-        {
-            var veriler = duyuruRepository.DuyurularıListele();
-            return View(veriler);
-        }
+       
         public IActionResult Duyurular()
         {
 

@@ -99,7 +99,7 @@ namespace Web_Vize_Proje.Controllers
 			//	result.YoneticiSifre==yonetici.YoneticiSifre)
 			if (result!=null)
 			{
-                return RedirectToAction("Duyurular");
+				return RedirectToAction("Index","Home");
             }
 			
 			else
