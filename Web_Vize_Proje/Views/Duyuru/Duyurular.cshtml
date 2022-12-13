@@ -120,11 +120,18 @@
 								<h3>@item.DuyuruBasligi</h3>
 							</a>
 							<p class="excert">
-									@item.DuyuruAciklamasi.Substring(0,item.DuyuruAciklamasi.Substring(0,200).LastIndexOf(" "))...
+									@item.DuyuruAciklamasi.Substring(0,item.DuyuruAciklamasi.Substring(0,20).LastIndexOf(" "))...
 									
 								
 								
-							</p>
+									</p>
+								}
+								catch 
+								{
+									
+									
+								}
+							
 							<a href="/Duyuru/DuyuruDetayi/@item.DuyuruID" class="view-more-btn">Devamını Gör </a>
 						</div>
 					</div>
