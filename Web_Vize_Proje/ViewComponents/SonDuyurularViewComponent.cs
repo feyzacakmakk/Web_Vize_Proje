@@ -14,8 +14,9 @@ namespace Web_Vize_Proje.ViewComponents
 
         public IViewComponentResult Invoke()
         {
-            //var sonDuyurular = _context.Duyurular.ToList().TakeLast(3);   Bu satır son 3 duyuruyu getirir ama sıralamayı eskiden yeniye doğru yapar
-            var sonDuyurular = _context.Duyurular.ToList().TakeLast(3).Reverse(); //Bu satır ise sıralamayı yeniden eskiye doğru yapar.
+
+            var sonDuyurular = _context.Duyurular.ToList().TakeLast(3).Reverse(); 
+
             return View(sonDuyurular);
         }
 

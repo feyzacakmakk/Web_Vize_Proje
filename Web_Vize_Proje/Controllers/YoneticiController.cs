@@ -24,9 +24,9 @@ namespace Web_Vize_Proje.Controllers
 		[HttpGet]
         public IActionResult DuyuruGetir(int id=1)
         {
-			//var result = context.Duyurular.Where(p => p.DuyuruID == id);
-            var res = context.Duyurular.SingleOrDefault(p => p.DuyuruID == id);
-            return View(res);
+			//var result = context.Duyurular.Where(p => p.DuyuruID == id).SingleOrDefault();
+			var res = context.Duyurular.SingleOrDefault(p => p.DuyuruID == id);
+			return View(res);
         }
 
         [HttpGet("/Yonetici/DuyuruSil/{duyuru_id}")]
@@ -44,12 +44,10 @@ namespace Web_Vize_Proje.Controllers
 			
 			var a = duyuru.DuyuruTarihi; //Duyurunun ilk eklenme tarihini bu şekilde saklıyoruz ki bu tarihi kaybetmeyelim.
 
-			//duyuru.DuyuruTarihi = DateTime.Parse(DateTime.Now.ToShortDateString());
-		
             duyuruRepository.DuyuruDuzenle(duyuru);
 			duyuru.DuyuruTarihi = a;
 			return RedirectToAction("Duyurular");
-			//Duyuru Güncelleme tarihi eklencek ve gösterilecek.
+		
 			
 		}
         

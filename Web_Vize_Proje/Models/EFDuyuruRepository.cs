@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.Linq;
 
 namespace Web_Vize_Proje.Models
@@ -18,10 +19,9 @@ namespace Web_Vize_Proje.Models
         }
         public Duyuru GetDuyuruById(int duyuru_id)
         {
-            
+
 
             var result = _context.Set<Duyuru>().Find(duyuru_id);
-            //var a = _context.Duyurular.Select(p=> p.DuyuruID==duyuru_id).
             return result;
 
         }

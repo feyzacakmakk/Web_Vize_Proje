@@ -15,7 +15,7 @@ namespace Web_Vize_Proje.Controllers
         public IActionResult Duyurular()
         {
 
-            //var veriler = duyuruRepository.DuyurularıListele();
+           
 
             //Eklediğimiz duyurular normal sırada geliyordu yani ilk başta en eski eklediğimiz duyuru geliyordu.
             // O yüzden de OrderByDescending yaparak en yeni duyuruların başta gelmesini sağladık.
