@@ -93,10 +93,10 @@ namespace Web_Vize_Proje.Controllers
         [HttpPost]
 		public IActionResult GirisYap(Yonetici yonetici)
 		{
+			//Select * From Yoneticiler where YoneticiKullanıcıAdi=yoneticiKullanıcıAdi AND YoneticiSifre=yoneticiSifre
 				var result=	context.Yoneticiler.SingleOrDefault(p => p.YoneticiKullanıcıAdi == yonetici.YoneticiKullanıcıAdi &&
 				p.YoneticiSifre == yonetici.YoneticiSifre);
-			//if (result.YoneticiKullanıcıAdi==yonetici.YoneticiKullanıcıAdi&&
-			//	result.YoneticiSifre==yonetici.YoneticiSifre)
+		
 			if (result!=null)
 			{
 				return RedirectToAction("Index","Home");
@@ -104,7 +104,7 @@ namespace Web_Vize_Proje.Controllers
 			
 			else
 			{
-				//string message = "Hatalı giriş yaptınız "
+				
                 return View();
             }
 			

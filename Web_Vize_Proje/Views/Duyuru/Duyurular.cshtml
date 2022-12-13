@@ -28,7 +28,7 @@
 							<a href="/Duyuru/Duyurular">DÜDuyurular</a>
 						</span>
 					</div>*@
-					<a href="/Yonetici/GirisYap/">
+					<a href="/Yonetici/Duyurular/">
 						<button class="click-btn btn" style="color: blueviolet; margin-top: 3rem;  margin-right: 3rem;">Duyuruları Düzenle</button>
 					</a>
 
@@ -119,19 +119,23 @@
 								<a class="posts-title" href="/Duyuru/DuyuruDetayi/@item.DuyuruID">
 								<h3>@item.DuyuruBasligi</h3>
 							</a>
-							<p class="excert">
-									@item.DuyuruAciklamasi.Substring(0,item.DuyuruAciklamasi.Substring(0,20).LastIndexOf(" "))...
+							@try
+								{
+									<p class="excert">
+									@item.DuyuruAciklamasi.Substring(0,item.DuyuruAciklamasi.Substring(0,200).LastIndexOf(" "))...
 									
 								
 								
 									</p>
 								}
-								catch 
+								catch
 								{
 									
 									
 								}
 							
+								
+								
 							<a href="/Duyuru/DuyuruDetayi/@item.DuyuruID" class="view-more-btn">Devamını Gör </a>
 						</div>
 					</div>

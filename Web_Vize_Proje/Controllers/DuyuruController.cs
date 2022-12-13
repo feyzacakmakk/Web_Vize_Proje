@@ -27,7 +27,7 @@ namespace Web_Vize_Proje.Controllers
         [HttpGet("/Duyuru/DuyuruDetayi/{duyuru_id}")]
         public IActionResult DuyuruDetayi(int duyuru_id)
         {
-            //ViewBag.DuyuruID = duyuru_id;
+           
         
             var result = duyuruRepository.GetDuyuruById(duyuru_id);
 
